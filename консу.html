@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .callback-form {
+            background: white;
+            padding: 70px;
+            border-radius: 42px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        .callback-form h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .callback-form p {
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: #666;
+        }
+        .callback-form input, .callback-form button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .callback-form input:focus {
+            border-color: #00aaff;
+            outline: none;
+        }
+        .callback-form button {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .callback-form button:hover {
+            background-color: #0077cc;
+        }
+        .callback-form .privacy-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="callback-form">
+    <h1>Закажите обратный звонок</h1>
+    <p>Оставьте свой номер, и мы вам перезвоним</p>
+    <form>
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="datetime-local" name="datetime" placeholder="Желаемая дата и время звонка" required>
+        <button type="submit">Отправить</button>
+        <p class="privacy-note">Нажимая кнопку “Отправить” вы соглашаетесь с условиями обработки личных данных</p>
+    </form>
+</div>
+
+</body>
+</html>

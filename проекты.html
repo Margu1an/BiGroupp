@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI GROUP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .sidebar .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .sidebar .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00a9e0;
+        }
+        .sidebar .nav-items a {
+            display: block;
+            text-decoration: none;
+            color: #00a9e0;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+        .sidebar .nav-items a.active, .sidebar .nav-items a:hover {
+            color: #00a9e0;
+        }
+        .sidebar .language-switch {
+            display: flex;
+            margin: 20px 0;
+        }
+        .sidebar .language-switch button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .sidebar .language-switch button.ru {
+            background-color: #00a9e0;
+            color: #fff;
+        }
+        .sidebar .language-switch button.kz {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #00a9e0;
+        }
+        .sidebar .contact {
+            background-color: #00a9e0;
+            padding: 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .sidebar .contact div {
+            margin-bottom: 20px;
+        }
+        .sidebar .contact button {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .content {
+            margin-left: 320px;
+            padding: 20px;
+        }
+        .listings-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .listing-frame {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+        .listing-frame:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .status {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .status.status-standard {
+            background-color: #1f3925;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+        .listing-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px; /* Отступ снизу изображения */
+        }
+        .listing-content {
+            padding: 0 10px 10px 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://company.bi.group/new_log.png" alt="Logo">
+            <span>GROUP</span>
+        </div>
+        <div class="nav-items">
+            <a href="BB.html">Главная</a>
+            <a href="проекты.html">Проекты</a>
+            <a href="ипотека.html">Ипотека</a>
+            <a href="рассроч.html">Рассрочка</a>
+            <a href="отдел.html">Отдел продаж</a>
+            <a href="компани.html">О компании</a>
+        </div>
+        <div class="language-switch">
+            <button class="ru">RU</button>
+            <button class="kz">KZ</button>
+        </div>
+        <div class="contact">
+            <div>Алматы<br>+7 701 736-03-60</div>
+            <div>Email<br>infosales@bi.group</div>
+            <div>BI<br>1995-2024</div>
+            <button ><a href="консу.html">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</a></button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="listings-container">
+            <div class="listing-frame">
+                <div class="status status-standard">Стандарт</div>
+                <h2>Arman Qala</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/8fd830b7-21ce-11ec-a81f-001dd8b72708/8fd830b7-21ce-11ec-a81f-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 1">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 70 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 40 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>  
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Стандарт</div>
+                <h2>MoD. Standard</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/58f16bcb-5e7f-11ed-a826-001dd8b72708/58f16bcb-5e7f-11ed-a826-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 2">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 85 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 50 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Бизнес+</div>
+                <h2>Garden View</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/92085076-bbcd-11ec-a820-001dd8b72708/92085076-bbcd-11ec-a820-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 3">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 1</p>
+                    <p><strong>Площадь:</strong> 45 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Окраина</p>
+                    <p><strong>Цена:</strong> 30 800 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Стандарт</div>
+                <h2>Arena City Astana</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/7a8c04d8-9f65-11ec-a820-001dd8b72708/7a8c04d8-9f65-11ec-a820-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 70 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 30 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Бизнес</div>
+                <h2>Capital Park. Light</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/215e5a59-25f8-11ee-a828-001dd8b72708/215e5a59-25f8-11ee-a828-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 85 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 50 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Комфорт</div>
+                <h2>Aktau Riviera</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/025d0375-2025-11eb-a837-00155d101d74/025d0375-2025-11eb-a837-00155d101d74_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 1</p>
+                    <p><strong>Площадь:</strong> 40 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 25 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт+</div>
+                <h2>Grand Turan</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/5dc3897f-135c-11eb-a830-00155d101559/5dc3897f-135c-11eb-a830-00155d101559_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 85 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 65 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Стандарт</div>
+                <h2>Jetisu.Aqsu</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/120efa09-567f-11ec-a81f-001dd8b72708/120efa09-567f-11ec-a81f-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 75 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 55 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт</div>
+                <h2>Besterek</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/1a9abbb7-6e4c-11e9-a82b-00155d101622/1a9abbb7-6e4c-11e9-a82b-00155d101622_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 4</p>
+                    <p><strong>Площадь:</strong> 90 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 70 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Бизнес</div>
+                <h2>Prime</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/9fd80cc9-3fe0-11ed-a82a-001dd8b726aa/9fd80cc9-3fe0-11ed-a82a-001dd8b726aa_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 65 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 50 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт</div>
+                <h2>ALA Park</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/4cc64c7c-3e86-11ea-a82f-00155d101a20/4cc64c7c-3e86-11ea-a82f-00155d101a20_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 1</p>
+                    <p><strong>Площадь:</strong> 35 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 25 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Премиум</div>
+                <h2>Akbulak Riviera</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/e5ee5a5f-04aa-11eb-a830-00155d101559/e5ee5a5f-04aa-11eb-a830-00155d101559_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 90 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 75 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт</div>
+                <h2>Сердце столицы</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/2fb3e9ba-5607-11e9-80d9-00155d101f25/2fb3e9ba-5607-11e9-80d9-00155d101f25_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 80 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 75 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Комфорт+</div>
+                <h2>Сердце столицы</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/528d8c0f-53fd-11eb-a83d-00155d106579/528d8c0f-53fd-11eb-a83d-00155d106579_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 4</p>
+                    <p><strong>Площадь:</strong> 85 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 55 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Бизнес</div>
+                <h2>Продажа квартиры 5</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/2dfd0dda-48d1-11eb-a83d-00155d106579/2dfd0dda-48d1-11eb-a83d-00155d106579_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 66 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 75 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Премиум</div>
+                <h2>Da Vinci</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/084959e9-53e0-11eb-a83d-00155d106579/084959e9-53e0-11eb-a83d-00155d106579_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 1</p>
+                    <p><strong>Площадь:</strong> 52 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 25 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Бизнес+</div>
+                <h2>AMIR</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/707e4aab-24be-11ef-a82d-001dd8b72708/707e4aab-24be-11ef-a82d-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 70 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 60 500 000 руб.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Стандарт</div>
+                <h2>Sezim Qala. Orken</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/f828f951-f620-11ed-a827-001dd8b72708/f828f951-f620-11ed-a827-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 1</p>
+                    <p><strong>Площадь:</strong> 35 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 24 200 000 руб.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт</div>
+                <h2>MoD. Comfort</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/6f2d14a5-1674-11ee-a827-001dd8b72708/6f2d14a5-1674-11ee-a827-001dd8b72708_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 86 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 56 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status status-standard">Комфорт</div>
+                <h2>Arena Towers Astana</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/f4f8eed8-6269-4a41-972c-137d028411ee/f4f8eed8-6269-4a41-972c-137d028411ee_foto_1600.jpg" alt="Фото квартиры 4">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 3</p>
+                    <p><strong>Площадь:</strong> 77 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 1</p>
+                    <p><strong>Местоположение:</strong> Центр города</p>
+                    <p><strong>Цена:</strong> 44 500 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+            <div class="listing-frame">
+                <div class="status">Комфорт</div>
+                <h2>Capital Park. Emotions</h2>
+                <img class="listing-image" src="https://s3.bi.group/biclick/a30a5dd1-1ae9-11ec-a829-001dd8b726aa/a30a5dd1-1ae9-11ec-a829-001dd8b726aa_foto_1600.jpg" alt="Фото квартиры 5">
+                <div class="listing-content">
+                    <p><strong>Количество комнат:</strong> 2</p>
+                    <p><strong>Площадь:</strong> 67 кв. м.</p>
+                    <p><strong>Санузлов:</strong> 2</p>
+                    <p><strong>Местоположение:</strong> Пригород</p>
+                    <p><strong>Цена:</strong> 37 200 000 тг.</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Купить</button>
+                    <button class="button">Смотреть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Футер</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+    
+            footer {
+                background-color: #00a9e0;
+                color: #fff;
+                padding: 20px 0;
+                font-size: 14px;
+            }
+    
+            .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 20px;
+            }
+    
+            .footer-section {
+                flex: 1;
+                margin: 10px;
+            }
+    
+            .footer-section h3 {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+    
+            .footer-section ul {
+                list-style-type: none;
+                padding: 0;
+            }
+    
+            .footer-section ul li {
+                margin-bottom: 5px;
+            }
+    
+            .footer-bottom {
+                background-color: #222;
+                text-align: center;
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+    
+            .footer-bottom p {
+                margin: 5px 0;
+            }
+    
+            .footer-bottom a {
+                color: #fff;
+                text-decoration: none;
+            }
+    
+            .footer-bottom a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+       <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Наши услуги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">Часто задаваемые вопросы</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Адрес: 
+ул. Климента Тимирязева, 28В, Алматы (БЦ Алатау Гранд)</li>
+                        <li>Телефон: +7 701 736-03-600</li>
+                        <li>Email: infosales@bi.group</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Компания. Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рассрочка</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex; /* Ensure flex layout for full height */
+            min-height: 100vh; /* Full viewport height */
+            flex-direction: column; /* Column layout for main structure */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            overflow-y: auto; /* Allow sidebar to scroll */
+            position: fixed; /* Fix sidebar position */
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .sidebar .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00a9e0;
+        }
+
+        .sidebar .nav-items a {
+            display: block;
+            text-decoration: none;
+            color: #00a9e0;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+
+        .sidebar .nav-items a.active,
+        .sidebar .nav-items a:hover {
+            color: #00a9e0;
+        }
+
+        .sidebar .language-switch {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .sidebar .language-switch button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .sidebar .language-switch button.ru {
+            background-color: #00a9e0;
+            color: #fff;
+        }
+
+        .sidebar .language-switch button.kz {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #00a9e0;
+        }
+
+        .sidebar .contact {
+            background-color: #00a9e0;
+            padding: 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .sidebar .contact div {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .contact button {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Main content styling */
+        .main-content {
+            flex: 1; /* Take remaining vertical space */
+            padding: 20px; /* Padding for content */
+            margin-left: 320px; /* Adjust margin to accommodate sidebar */
+            overflow-y: auto; /* Allow main content to scroll */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #00a9e0;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-bottom {
+            background-color: #222;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Specific styling for the 'Рассрочка' page */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00a9e0;
+            margin-bottom: 20px;
+        }
+
+        .installment-info {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .installment-info h3 {
+            font-size: 24px;
+            color: #00a9e0;
+            margin-bottom: 10px;
+        }
+
+        .installment-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #003366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://company.bi.group/new_log.png" alt="Logo">
+            <span>GROUP</span>
+        </div>
+        <div class="nav-items">
+            <a href="BB.html">Главная</a>
+            <a href="проекты.html">Проекты</a>
+            <a href="ипотека.html">Ипотека</a>
+            <a href="рассроч.html">Рассрочка</a>
+            <a href="отдел.html">Отдел продаж</a>
+            <a href="компани.html">О компании</a>
+        </div>
+        <div class="language-switch">
+            <button class="ru">RU</button>
+            <button class="kz">KZ</button>
+        </div>
+        <div class="contact">
+            <div>Алматы<br>+7 701 736-03-60</div>
+            <div>Email<br>infosales@bi.group</div>
+            <div>BI<br>1995-2024</div>
+            <button ><a href="консу.html">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</a></button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="title">РАССРОЧКА</div>
+            <div class="installment-info">
+                <h3>Удобная рассрочка 20/80</h3>
+                <p>20% — первоначальный взнос, 80% финальная оплата до ввода в эксплуатацию</p>
+                <a href="консу.html" class="btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Компания</h3>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наши услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="#">Часто задаваемые вопросы</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Условия использования</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>Адрес: 
+ул. Климента Тимирязева, 28В, Алматы (БЦ Алатау Гранд)</li>
+                    <li>Телефон: +7 701 736-03-600</li>
+                    <li>Email: infosales@bi.group</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Компания. Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+        </div>
+    </footer>
+</body>
+</html>

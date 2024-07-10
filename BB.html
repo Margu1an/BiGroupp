@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI GROUP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .sidebar .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .sidebar .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00a9e0;
+        }
+        .sidebar .nav-items a {
+            display: block;
+            text-decoration: none;
+            color: #00a9e0;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+        .sidebar .nav-items a.active, .sidebar .nav-items a:hover {
+            color: #007bb5;
+        }
+        .sidebar .language-switch {
+            display: flex;
+            margin: 20px 0;
+        }
+        .sidebar .language-switch button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .sidebar .language-switch button.ru {
+            background-color: #00a9e0;
+            color: #fff;
+        }
+        .sidebar .language-switch button.kz {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #00a9e0;
+        }
+        .sidebar .contact {
+            background-color: #00a9e0;
+            padding: 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .sidebar .contact div {
+            margin-bottom: 20px;
+        }
+        .sidebar .contact button {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .main-content {
+            margin-left: 450px;
+            padding: 150px;
+            width: 100%; /* Ensure content takes full width */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+        .gallery-container {
+            width: 80%; /* Adjust width as needed */
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+            border: none;
+            border-radius: 50%;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .gallery-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.5) 100%);
+            pointer-events: none;
+        }
+        footer {
+            background-color: #00a9e0;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 14px;
+            width: 100%; /* Ensure footer takes full width */
+            text-align: center;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+        .footer-bottom {
+            background-color: #222;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: linear-gradient(135deg, #004dff, #5200ff);
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .text-section {
+            flex: 1;
+            min-width: 600px;
+        }
+        .text-section h1 {
+            font-size: 2em;
+        }
+        .text-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .download-buttons img {
+            width: 150px;
+            height: auto;
+        }
+        .phone-images {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .phone-images img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 10px;
+            border-radius: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar input {
+            border: none;
+            padding: 10px;
+            flex: 1;
+        }
+        .search-bar button {
+            border: none;
+            background: #ff4b5c;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://company.bi.group/new_log.png" alt="Logo">
+            <span>GROUP</span>
+        </div>
+        <div class="nav-items">
+            <a href="BB.html">Главная</a>
+            <a href="проекты.html">Проекты</a>
+            <a href="ипотека.html">Ипотека</a>
+            <a href="рассроч.html">Рассрочка</a>
+            <a href="отдел.html">Отдел продаж</a>
+            <a href="компани.html">О компании</a>
+        </div>
+        <div class="language-switch">
+            <button class="ru">RU</button>
+            <button class="kz">KZ</button>
+        </div>
+        <div class="contact">
+            <div>Алматы<br>+7 701 736-03-60</div>
+            <div>Email<br>infosales@bi.group</div>
+            <div>BI<br>1995-2024</div>
+            <button><a href="консу.html">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</a></button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="main-content">
+        <div class="gallery-container">
+            <div class="gallery">
+                <img src="https://s3.bi.group/biclick/content-manager/1440h694_slajder_kaz_kopiya_f749b92a54.jpg" alt="Фото 1">
+                <img src="https://s3.bi.group/biclick/content-manager/IMG_3083_3aa934821d.JPG" alt="Фото 2">
+                <img src="https://s3.bi.group/biclick/content-manager/2000x1048_1_f10b9d1da4.jpg" alt="Фото 3">
+                <!-- Add more photos here -->
+            </div>
+            <div class="prev" onclick="changeSlide(-1)">&#10094;</div>
+            <div class="next" onclick="changeSlide(1)">&#10095;</div>
+        </div>
+        <div class="container"
+        >
+            <div class="text-section">
+                <h1>Работы по дому, клуб скидок, ремонт и все сервисы BI Group в одной руке</h1>
+                <div class="search-bar">
+                </div>
+                <p>Скачайте супер-приложение, удобное для покупателей и жителей</p>
+                <div class="download-buttons">
+                    <a href="https://apps.apple.com" target="_blank">
+                        <img src="https://www.tavershams.com/wp-content/uploads/2018/12/app-store-17122018.png" alt="App Store">
+                    </a>
+                    <a href="https://play.google.com" target="_blank">
+                        <img src="https://1soft-download.com/uploads/posts/2020-08/1597372695_android-app-on-google-play_svg_.png" alt="Google Play">
+                    </a>
+                </div>
+            </div>
+            <div class="phone-images">
+                <img src="https://bi.group/static/images/PromoAppPhones.png" alt="Phone 1">
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Наши услуги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">Часто задаваемые вопросы</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Адрес: ул. Климента Тимирязева, 28В, Алматы (БЦ Алатау Гранд)</li>
+                        <li>Телефон: +7 701 736-03-600</li>
+                        <li>Email: infosales@bi.group</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Компания. Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery img');
+        const totalSlides = slides.length;
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            const moveAmount = -currentSlide * 100; /* Slide percentage calculation */
+            document.querySelector('.gallery').style.transform = `translateX(${moveAmount}%)`;
+        }
+    </script>
+</body>
+</html>
+
+

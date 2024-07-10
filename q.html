@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Продажа квартир</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    .listings-container {
+        display: flex;
+        justify-content: space-around; /* Равномерное распределение по горизонтали */
+        gap: 20px; /* Отступ между рамками */
+    }
+    .listing-frame {
+        border: 2px solid #1a73e8; /* Цвет рамки */
+        padding: 20px;
+        width: calc(33.33% - 40px); /* Ширина каждой рамки с учетом отступов */
+        background-color: #ffffff; /* Цвет фона */
+        border-radius: 8px; /* Закругление углов */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Тень */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative; /* Позиционирование элементов внутри рамки */
+    }
+    .listing-frame h2 {
+        font-size: 20px;
+        text-align: center;
+        color: #1a73e8; /* Цвет заголовка */
+        margin-bottom: 10px;
+    }
+    .listing-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .listing-content p {
+        margin: 8px 0;
+    }
+    .listing-content strong {
+        font-weight: bold;
+    }
+    .listing-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .status {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: #4caf50; /* Зеленый цвет для статуса "бизнес" */
+        color: #ffffff;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .status-standard {
+        background-color: #ff9800; /* Оранжевый цвет для статуса "стандарт" */
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .button {
+        padding: 10px 20px;
+        text-align: center;
+        background-color: #1a73e8; /* Цвет кнопки */
+        color: #ffffff; /* Цвет текста кнопки */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .button:hover {
+        background-color: #0d47a1; /* Цвет кнопки при наведении */
+    }
+</style>
+</head>
+<body>
+<div class="listings-container">
+    <div class="listing-frame">
+        <div class="status status-standard">Стандарт</div>
+        <h2>Продажа квартиры 1</h2>
+        <img class="listing-image" src="apartment1.jpg" alt="квартиры 1">
+        <div class="listing-content">
+            <p><strong>Количество комнат:</strong> 2</p>
+            <p><strong>Площадь:</strong> 70 кв. м.</p>
+            <p><strong>Санузлов:</strong> 1</p>
+            <p><strong>Местоположение:</strong> Центр города</p>
+            <p><strong>Цена:</strong> 25 000 000 тг.</p>
+        </div>
+        <div class="buttons">
+            <button class="button">Купить</button>
+            <button class="button">Смотреть</button>
+        </div>
+    </div>
+    <div class="listing-frame">
+        <div class="status">Бизнес</div>
+        <h2>Продажа квартиры 2</h2>
+        <img class="listing-image" src="apartment2.jpg" alt="квартиры 2">
+        <div class="listing-content">
+            <p><strong>Количество комнат:</strong> 3</p>
+            <p><strong>Площадь:</strong> 85 кв. м.</p>
+            <p><strong>Санузлов:</strong> 2</p>
+            <p><strong>Местоположение:</strong> Пригород</p>
+            <p><strong>Цена:</strong> 30 000 000 тг.</p>
+        </div>
+        <div class="buttons">
+            <button class="button">Купить</button>
+            <button class="button">Смотреть</button>
+        </div>
+    </div>
+    <div class="listing-frame">
+        <div class="status status-standard">Стандарт</div>
+        <h2>Продажа квартиры 3</h2>
+        <img class="listing-image" src="apartment3.jpg" alt="квартиры 3">
+        <div class="listing-content">
+            <p><strong>Количество комнат:</strong> 1</p>
+            <p><strong>Площадь:</strong> 45 кв. м.</p>
+            <p><strong>Санузлов:</strong> 1</p>
+            <p><strong>Местоположение:</strong> Окраина</p>
+            <p><strong>Цена:</strong> 65 000 000 тг.</p>
+        </div>
+        <div class="buttons">
+            <button class="button">Купить</button>
+            <button class="button">Смотреть</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI GROUP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .sidebar .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .sidebar .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00a9e0;
+        }
+        .sidebar .nav-items a {
+            display: block;
+            text-decoration: none;
+            color: #00a9e0;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+        .sidebar .nav-items a.active, .sidebar .nav-items a:hover {
+            color: #00a9e0;
+        }
+        .sidebar .language-switch {
+            display: flex;
+            margin: 20px 0;
+        }
+        .sidebar .language-switch button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .sidebar .language-switch button.ru {
+            background-color: #00a9e0;
+            color: #fff;
+        }
+        .sidebar .language-switch button.kz {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #00a9e0;
+        }
+        .sidebar .contact {
+            background-color: #00a9e0;
+            padding: 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .sidebar .contact div {
+            margin-bottom: 20px;
+        }
+        .sidebar .contact button {
+            background-color: #fff;
+            color: #00a9e0;
+            border: 1px solid #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .content {
+            margin-left: 320px;
+            padding: 20px;
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .text {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .text h2 {
+            font-size: 28px;
+            color: #00a9e0;
+        }
+        .text p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .text {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                padding-bottom: 20px;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+        .filters {
+            width: 100%;
+            max-width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .filters select, .filters input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .filters label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .filters .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .offers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .offer {
+            flex: 1;
+            min-width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .offer h3 {
+            font-size: 18px;
+            color: #00a9e0;
+            margin-bottom: 10px;
+        }
+        .offer p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .offer .details {
+            font-size: 14px;
+            color: #999;
+        }
+        .offer .cta {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00a9e0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://company.bi.group/new_log.png" alt="Logo">
+            <span>GROUP</span>
+        </div>
+        <div class="nav-items">
+            <a href="BB.html">Главная</a>
+            <a href="проекты.html">Проекты</a>
+            <a href="ипотека.html">Ипотека</a>
+            <a href="рассроч.html">Рассрочка</a>
+            <a href="отдел.html">Отдел продаж</a>
+            <a href="компани.html">О компании</a>
+        </div>
+        <div class="language-switch">
+            <button class="ru">RU</button>
+            <button class="kz">KZ</button>
+        </div>
+        <div class="contact">
+            <div>Алматы<br>+7 701 736-03-60</div>
+            <div>Email<br>infosales@bi.group</div>
+            <div>BI<br>1995-2024</div>
+            <button ><a href="консу.html">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</a></button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="text">
+                <h2>BI Finance</h2>
+                <p>Проявляя заботу о своих клиентах, мы собрали всю важную информацию о покупке недвижимости в ипотеку и рассрочку на одной странице - BI Finance.</p>
+                <p>Воспользовавшись калькулятором на сайте, вы сможете рассчитать стоимость ежемесячного платежа с учетом первоначального взноса, подобрать комфортный для вас способ покупки и приобрести недвижимость в удобное для вас время из любой точки мира.</p>
+            </div>
+            <div class="image">
+                <img src="https://s3.bi.group/biclick/content-manager/DSC_5765_bdf7431c87.JPG" alt="Family Image">
+            </div>
+        </div>
+
+        <div class="filters">
+            <label for="city">Выберите город</label>
+            <select id="city">
+                <option>Все</option>
+                <option>Алматы</option>
+                <option>Астана</option>
+            </select>
+
+            <label for="property-type">Тип недвижимости</label>
+            <select id="property-type">
+                <option>Квартира</option>
+                <option>Дом</option>
+            </select>
+
+            <label for="property-price">Стоимость недвижимости, ₸</label>
+            <input type="number" id="property-price" value="50000000">
+
+            <label for="down-payment">Первый взнос, ₸</label>
+            <input type="number" id="down-payment" value="25000000">
+
+            <label for="loan-term">Срок ипотеки</label>
+            <input type="number" id="loan-term" value="15">
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Без подтверждения дохода</label>
+                <label><input type="checkbox"> Дополнительный залог</label>
+                <label><input type="checkbox"> Есть депозит в Отбасы банк</label>
+            </div>
+        </div>
+
+        <div class="offers">
+            <div class="offer">
+                <h3>Freedom Bank Каскадная ипотека (Акция)</h3>
+                <p>Ежемесячный платёж от 176 200 ₸</p>
+                <p class="details">Ставка от 7%<br>Срок 15 лет<br>Сумма займа 25 000 000 ₸</p>
+                <a href="https://bankffin.kz/ipoteka/programs/b2cc" class="cta">Подробнее</a>
+            </div>
+            <div class="offer">
+                <h3>Freedom Bank Каскадная ипотека</h3>
+                <p>Ежемесячный платёж от 216 953 ₸</p>
+                <p class="details">Ставка от 9%<br>Срок 15 лет<br>Сумма займа 25 000 000 ₸</p>
+                <a href="https://bankffin.kz/ipoteka/programs/b2cc" class="cta">Подробнее</a>
+            </div>
+            <div class="offer">
+                <h3>Altyn Bank Ондай ипотека (Акция)</h3>
+                <p>Ежемесячный платёж ~ 231 753 ₸</p>
+                <p class="details">Ставка 7.5%<br>Срок 15 лет<br>Сумма займа 25 000 000 ₸</p>
+                <a href="https://altynbank.kz/personal/mortage" class="cta">Подробнее</a>
+            </div>
+            <div class="offer">
+                <h3>Altyn Bank Ондай ипотека</h3>
+                <p>Ежемесячный платёж ~ 268 651 ₸</p>
+                <p class="details">Ставка 10%<br>Срок 15 лет<br>Сумма займа 25 000 000 ₸</p>
+                <a href="https://altynbank.kz/personal/mortage" class="cta">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            background-color: #00a9e0;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-bottom {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Компания</h3>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наши услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="#">Часто задаваемые вопросы</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Условия использования</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>Адрес: 
+ул. Климента Тимирязева, 28В, Алматы (БЦ Алатау Гранд)</li>
+                    <li>Телефон: +7 701 736-03-600</li>
+                    <li>Email: infosales@bi.group</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Компания. Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
